@@ -1,0 +1,27 @@
+{
+  "name": "SeeThrough",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "main.html",
+    "default_icon": "SeeThroughLogoMain.png"
+  },
+  "icons": {
+    "16": "SeeThroughLogoMain.png",
+    "32": "SeeThroughLogoMain.png",
+    "48": "SeeThroughLogoMain.png",
+    "128": "SeeThroughLogoMain.png"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
